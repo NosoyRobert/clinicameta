@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST["enviar"])) 
+if(isset($_POST["ESPE"])) 
 {
 	include ('functions.php');
 	include ('sty.php');
@@ -47,23 +47,3 @@ if(isset($_POST["enviar"]))
 	}
 }
 ?>
-
-<!--?php
-include "sty.php";
-//echo '<a href="profile.php?action=administrar"  class="but">Volver</a>';
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>Subir archivo</title>
-</head>
-<body>
-	<div class="formulario">
-		<form action="vistas/modulos/importar/index2.php" class="formulariocompleto" method="post" enctype="multipart/form-data">
-			<input type="file" name="archivo" class="form-control"/>
-			<input type="submit" name="SUBIR ARCHIVO" class="form-control" name="enviar">
-		</form>
-	</div>
-</body>
-</html-->

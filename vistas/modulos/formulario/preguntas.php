@@ -35,35 +35,29 @@ if($resultado)
         WHERE cargo='$cargoP'");
         $row = mysqli_fetch_assoc($PRE);
 
-        /*$PP1 = $_SESSION['PP1'] ?? '';
-        $PP2 = $_SESSION['PP2'] ?? '';
-        $PP3 = $_SESSION['PP3'] ?? '';
-        $PP4 = $_SESSION['PP4'] ?? '';
-        $PP5 = $_SESSION['PP5'] ?? '';*/
-
-
-            if(['PP1']!==null)
+            if($row['PP1']!==null)
             {
-                $PP1 = $_SESSION['PP1'] ?? '';
+                $PP1 = $row['PP1'];
             }
 
             if(['PP2']!=null) 
             {
-                $PP2 = $_SESSION['PP2'] ?? '';
+                $PP2 = $row['PP2'];
             }
 
             if(['PP3']!=null) 
             {
-                $PP3 = $_SESSION['PP3'] ?? '';
+            $PP3 = $row['PP3'];
             }
 
             if(['PP4']!=null) 
             {
-                $PP4 = $_SESSION['PP4'] ?? '';
+            $PP4 = $row['PP4'];
             }
 
             if(['PP5']!=null) 
             {
-                $PP5 = $_SESSION['PP5'] ?? '';
-            }
+            $PP5 = $row['PP5'];     
+            }       
 }
+var_dump($PRE);

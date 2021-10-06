@@ -363,6 +363,10 @@ a:active.but {
 
 	<br><br>
 
+    <?php echo '<a href="profile.php?action=espe"  class="but">Importar Preguntas Especificas</a>'; ?>
+
+	<br><br>
+
     <?php echo '<a href="profile.php?action=preguntas"  class="but">Editar Preguntas Especificas</a>'; ?>
 
     <br><br>

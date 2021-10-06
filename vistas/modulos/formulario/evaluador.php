@@ -22,7 +22,6 @@ if($resultado)
     {
         $nombre = $row['nombre'];
         $cedula = $row['cedula'];
-        //$grupo = $row['grupo'];
     }
 
     ?>

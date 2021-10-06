@@ -7,11 +7,11 @@ include "style.php";
 
 echo '<a href="profile.php?action=administrar"  class="but">Volver</a>';
 ?>
-<form action="vistas/modulos/importar/base.php" class="formulariocompleto" method="post" enctype="multipart/form-data">
+<form action="vistas/modulos/importar/espe.php" class="formulariocompleto" method="post" enctype="multipart/form-data">
 			<input type="file" name="archivo" class="form-control"/>
-			<input type="submit" class="form-control" name="enviar">
+			<input type="submit" class="form-control" name="ESPE">
 </form>
 
 <?php
-include "importar/base.php";
+include "importar/espe.php";
 ?>

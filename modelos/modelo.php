@@ -26,6 +26,7 @@ class EnlacesPaginas
 			$enlacesModelo=="borrar_id"||
 			$enlacesModelo=="preguntas"||
 			$enlacesModelo=="Copia_seguridad"||
+			$enlacesModelo=="espe"||
 			$enlacesModelo=="Expo_datos"||
 			$enlacesModelo=="preguntas_cargo"||
 			$enlacesModelo=="excel"||
