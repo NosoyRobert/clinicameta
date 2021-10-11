@@ -1,67 +1,54 @@
 <?php
-error_reporting(E_PARSE);
-/*Solo modifica lo que se encuentra en medio de las segundas
- comillas de los parentesis. Ejemplo: define("USER", "valor que ingresaras" ); 
- */
 
-define('DB_HOST', 'localhost');//DB_HOST:  generalmente suele ser "127.0.0.1"
-define('DB_USER', 'root');//Usuario de tu base de datos
-define('DB_PASS', '');//Contraseña del usuario de la base de datos
-define('DB_NAME', 'clinicameta');//Nombre de la base de datos
-
-//Carpeta donde se almacenaran las copias de seguridad
-define("BACKUP_PATH", "vistas/modulos/copia/backup");
-
-/*Configuración de zona horaria de tu país para más información visita
-    http://php.net/manual/es/function.date-default-timezone-set.php
-    http://php.net/manual/es/timezones.php
-*/
-date_default_timezone_set('America/Bogota');
-
-
-class SGBD{
-    //Funcion para hacer consultas a la base de datos
-    public static function sql($query){
-
-        $con=@mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if(!$con){
-            echo "Error en el servidor, verifique sus datos";
-        }else{
-            if (!mysql_select_db(DB_NAME)) {
-                echo "Error al conectar con la base de datos, verifique el nombre de la base de datos";
-            }else{
-                mysql_set_charset('utf8',$con);
-                mysql_query("SET AUTOCOMMIT=0;",$con);
-                mysql_query("BEGIN;",$con);
-                if (!$consul = mysql_query($query,$con)) {
-                    echo 'Error en la consulta SQL ejecutada';
-                    mysql_query("ROLLBACK;",$con);
-                }else{
-                    mysql_query("COMMIT;",$con);
-                }
-                return $consul;
-            }
-        }
-    }  
-
-    //Funcion para limpiar variables que contengan inyeccion SQL
-    public static function limpiarCadena($valor) {
-        $valor=addslashes($valor);
-        $valor = str_ireplace("<script>", "", $valor);
-        $valor = str_ireplace("</script>", "", $valor);
-        $valor = str_ireplace("SELECT * FROM", "", $valor);
-        $valor = str_ireplace("DELETE FROM", "", $valor);
-        $valor = str_ireplace("UPDATE", "", $valor);
-        $valor = str_ireplace("INSERT INTO", "", $valor);
-        $valor = str_ireplace("DROP TABLE", "", $valor);
-        $valor = str_ireplace("TRUNCATE TABLE", "", $valor);
-        $valor = str_ireplace("--", "", $valor);
-        $valor = str_ireplace("^", "", $valor);
-        $valor = str_ireplace("[", "", $valor);
-        $valor = str_ireplace("]", "", $valor);
-        $valor = str_ireplace("\\", "", $valor);
-        $valor = str_ireplace("=", "", $valor);
-        return $valor;
+class db
+{
+    private $servidor = "localhost";
+    private $db = "clinicameta";
+    private $port = 3306;
+    private $charset = "utf8";
+    private $usuario = "root";
+    private $contrasena = "";
+    private $unix_socket = "/var/run/mysql/mysql.sock";
+    public $pdo = null;
+    private $opciones = [PDO::ATTR_CASE => PDO::CASE_LOWER, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_ORACLE_NULLS => PDO::NULL_EMPTY_STRING, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ];
+    function __construct()
+    {
+        $this->pdo = new PDO("mysql:unix_socket={$this->unix_socket};dbname={$this->db};host={$this->servidor};port={$this->port};charset={$this->charset}", $this->usuario, $this->contrasena, $this->opciones);
     }
-}
+
+    public function getServidor():string
+    {
+        return $this->servidor;
+    }
+
+        public function getdb():string
+    {
+        return $this->db;
+    }
+
+        public function getPort():string
+    {
+        return $this->port;
+    }
+
+        public function getCharset():string
+    {
+        return $this->charset;
+    }
+
+        public function getUsuario():string
+    {
+        return $this->usuario;
+    }
+
+        public function getContrasena():string
+    {
+        return $this->contrasena;
+    }
+
+    public function getUnixSocket()
+    {
+        return $thi->unix_socket;
+    }
+
+} 
