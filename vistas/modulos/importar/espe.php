@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["ESPE"])) 
 {
-	include ('functions.php');
+	include ('funcion.php');
 	include ('sty.php');
 	// echo "Se hizo click en el boton";
 
@@ -31,7 +31,7 @@ if(isset($_POST["ESPE"]))
 			//echo $datos[0]. " ".$datos[1]. " ".$datos[2]. " ".$datos[3]. " ".$datos[4]. " ".$datos[5]."<br>";
 			if($rows > 1)
 			{
-				$resultado = insertar_datos($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
+				$resultado = insertar_datos($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6]);
 				if ($resultado) 
 				{
 					echo "Se inserto los datos correctamente <br>";

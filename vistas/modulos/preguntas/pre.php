@@ -14,7 +14,6 @@ if(isset($_POST['preguntas']))
             $PP3=$row['PP3'];
             $PP4=$row['PP4'];
             $PP5=$row['PP5'];
-            
 
             ?>
 
