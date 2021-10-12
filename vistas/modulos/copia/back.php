@@ -1,38 +1,65 @@
 <?php
-require("Connet.php");
-class backupdb extends db
-{
-    private $ruta = "";
-    function __construct()
-    {
-        parent::__construct();
-        echo $this->config();
+include 'Connet.php';
+$day=date("d");
+$mont=date("m");
+$year=date("Y");
+$hora=date("H-i-s");
+$fecha=$day.'_'.$mont.'_'.$year;
+$DataBASE=$fecha."_(".$hora."_hrs).sql";
+$tables=array();
+$result=SGBD::sql('SHOW TABLES');
+if($result){
+    while($row=mysql_fetch_row($result)){
+        $tables[] = $row[0];
     }
-
-    private function config():string
-    {
-        $fecha = date("h-m-s_d-m-Y");
-        $this->ruta = "backup/{$fecha}_{$this->getdb()}.sql";
-        if(is_writable("backup"))
-        {
-            if(file_exists($ruta))
-            {
-                unlink($ruta);
+    $sql='SET FOREIGN_KEY_CHECKS=0;'."\n\n";
+    $sql.='CREATE DATABASE IF NOT EXISTS '.BD.";\n\n";
+    $sql.='USE '.BD.";\n\n";
+    foreach($tables as $table){
+        $result=SGBD::sql('SELECT * FROM '.$table);
+        if($result){
+            $numFields=mysql_num_fields($result);
+            $sql.='DROP TABLE IF EXISTS '.$table.';';
+            $row2=mysql_fetch_row(SGBD::sql('SHOW CREATE TABLE '.$table));
+            $sql.="\n\n".$row2[1].";\n\n";
+            for ($i=0; $i < $numFields; $i++){
+                while($row=mysql_fetch_row($result)){
+                    $sql.='INSERT INTO '.$table.' VALUES(';
+                    for($j=0; $j<$numFields; $j++){
+                        $row[$j]=addslashes($row[$j]);
+                        $row[$j]=ereg_replace("\n","\\n",$row[$j]);
+                        if (isset($row[$j])){
+                            $sql .= '"'.$row[$j].'"' ;
+                        }
+                        else{
+                            $sql.= '""';
+                        }
+                        if ($j < ($numFields-1)){
+                            $sql .= ',';
+                        }
+                    }
+                    $sql.= ");\n";
+                }
             }
-            else
-            {
-                $comando = "mysqldump -u {$this->getUsuario()} -p'{$this->getContrasena()}' {$this->getdb()} > {$this->ruta}";
-                return system($comando);
-            }
-        }
-        else
-        {
-            return "El directorio no tiene permisos de escritura.";
+            $sql.="\n\n\n";
+        }else{
+            $error=1;
         }
     }
-
-    public function getRuta():string
-    {
-        return $this->ruta;
+    if($error==1){
+        echo 'error';
+    }else{
+        chmod(BACKUP_PATH, 0777);
+        $sql.='SET FOREIGN_KEY_CHECKS=1;';
+        $handle=fopen(BACKUP_PATH.$DataBASE,'w+');
+        if(fwrite($handle, $sql)){
+            fclose($handle);
+            echo 'Copia de seguridad realizada';
+        }else{
+            echo 'Ocurrio un error';
+        }
     }
+}else{
+    echo 'Ocurrio un error inesperado';
 }
+mysql_free_result($result);
