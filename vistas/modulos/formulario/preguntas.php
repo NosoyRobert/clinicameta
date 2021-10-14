@@ -40,16 +40,16 @@ if($resultado)
         $PP4=isset($row['PP4']) ? $row['PP4'] : '';
         $PP5=isset($row['PP5']) ? $row['PP5'] : '';
 
-        var_dump($datos);
+        //var_dump($datos);
         //var_dump($PRE);
 
-        if ($resultado = mysqli_query($con, $PRE)) 
+        /*if ($resultado = mysqli_query($con, $PRE)) 
         {
             while ($row = mysqli_fetch_assoc($resultado)) 
             {
                 echo $row["$PRE"];
             }
-        }
+        }*/
 
         /*if(empty($PP1)){
             echo "<h2> variable vacia o esta cero</h2>";

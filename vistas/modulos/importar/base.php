@@ -29,7 +29,7 @@ if(isset($_POST["enviar"]))
 		{
 			$rows ++;
 			//echo $datos[0]. " ".$datos[1]. " ".$datos[2]. " ".$datos[3]. " ".$datos[4]. " ".$datos[5]."<br>";
-			if($rows > 1)
+			if($rows >= 1)
 			{
 				$resultado = insertar_datos($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
 				if ($resultado) 

@@ -4,10 +4,12 @@ error_reporting(E_PARSE);
  comillas de los parentesis. Ejemplo: define("USER", "valor que ingresaras" ); 
  */
 
-define('DB_HOST', 'localhost');
+/*define('DB_HOST', 'localhost');
 define('DB_USER', 'root');//Usuario de tu base de datos
 define('DB_PASS', '');//Contraseña del usuario de la base de datos
-define('DB_NAME', 'clinicameta');//Nombre de la base de datos
+define('DB_NAME', 'clinicameta');//Nombre de la base de datos*/
+require_once('../config/db.php');
+require_once('../config/conexion.php');
 
 //Carpeta donde se almacenaran las copias de seguridad
 define("BACKUP_PATH", "vistas/modulos/copia/backup");
