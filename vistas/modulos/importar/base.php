@@ -14,7 +14,7 @@ if(isset($_POST["enviar"]))
 
 	if(copy($archivo_copiado, $archivo_guardado)) 
 	{
-		echo "<h1>Se copeo correctamente a la carpeta</h1><br>";
+		echo "<h1>Se copio correctamente a la carpeta</h1><br>";
 	}else{
 		echo "hubo un error<br>";
 	}

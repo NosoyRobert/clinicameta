@@ -9,7 +9,7 @@
 	echo '<a href="profile.php?action=administrar"  class="but">Volver</a>';
 	?>
 	<?php
-		include 'Connet.php';
+		//include 'Connet.php';
 		include 'sty.php';
 	?>
 	<form action="vistas/modulos/copia/restore.php" method="POST">

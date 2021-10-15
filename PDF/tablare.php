@@ -982,7 +982,7 @@ $Exp = '
  </tr>
  <tr height=21 style="page-break-before:always;height:15.75pt">
   <td colspan=3 rowspan=8 height=170 class=xl1096105 style="border-right:1.0pt solid black;
-  border-bottom:1.0pt solid black;height:127.5pt"></td>
+  border-bottom:1.0pt solid black;height:127.5pt">'.$comen'</td>
  </tr>
  <tr height=21 style="height:15.75pt">
  </tr>

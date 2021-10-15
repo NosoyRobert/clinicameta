@@ -15,7 +15,7 @@ if(isset($_POST['exportar']))
             if($resul)
             {
                 ?>
-                <a href="PDF/mpdf.php" class="but">Generar PDF</a>
+                <a href="PDF/mpdf.php" target="_blank" class="but">Generar PDF</a>
                 <?php
             }
             else
