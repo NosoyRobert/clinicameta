@@ -119,10 +119,6 @@ header('Location: index.php'); // Redirecciona a la pagina de inicio
 			Femenino(F)
 			</label><br>
 
-			<label><input type="radio" name="genero" value= "X"> 
-			Otro(X)
-			</label><br>
-
 			</p>
 
 			<br>

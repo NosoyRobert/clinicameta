@@ -14,7 +14,7 @@ if(isset($_POST["ESPE"]))
 
 	if(copy($archivo_copiado, $archivo_guardado)) 
 	{
-		echo "<h1>Se copeo correctamente a la carpeta</h1><br>";
+		echo "<h1>Se copio correctamente a la carpeta</h1><br>";
 	}else{
 		echo "hubo un error<br>";
 	}
@@ -29,7 +29,7 @@ if(isset($_POST["ESPE"]))
 		{
 			$rows ++;
 			//echo $datos[0]. " ".$datos[1]. " ".$datos[2]. " ".$datos[3]. " ".$datos[4]. " ".$datos[5]."<br>";
-			if($rows > 1)
+			if($rows >= 1)
 			{
 				$resultado = insertar_datos($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6]);
 				if ($resultado) 

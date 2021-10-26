@@ -192,6 +192,9 @@ h5 {
 	if($cedula=="1121835090" || $cedula=="1022422737" || $cedula=="1022422737" || $cedula=="40393338")
 	{
 		echo '<a href="profile.php?action=administrar"  class="but">Administrar</a>';
+	}else if($cedula=="1234")
+	{
+		echo '<a href="profile.php?action=jefe"  class="but">Administrar</a>';
 	}
 
 	
@@ -211,11 +214,11 @@ h5 {
 		<table style="width:50%" class="center">	
             <tr>
 				<td><h3> NOTA FINAL: </h3> </td>
-                <td><h3><?php echo $Exp/4; ?><h3></td>
+                <td><h3><?php echo $Exp/$num; ?><h3></td>
             </tr>
             <tr>
 				<td><h3> TOTAL EVALUADORES: </h3> </td>
-                <td ><h3> <?php echo $num; ?>/4 </h3></td>
+                <td ><h3> <?php echo $num; ?>/<?php echo $num ?> </h3></td>
             </table>
 	</p>
 	<p>
