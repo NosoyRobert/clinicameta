@@ -1,6 +1,6 @@
 <?php
 
-        $con = mysqli_connect('localhost', 'root', '', 'clinicameta');
+        $con = mysqli_connect('192.168.11.247', 'talentoh', 'talentoh', 'talentoh');
 
         function insertar_datos($grupo,$cargo,$PP1,$PP2,$PP3,$PP4,$PP5)
         {
