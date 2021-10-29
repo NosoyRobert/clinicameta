@@ -367,6 +367,10 @@ a:active.but {
 
 	<br><br>
 
+	<?php echo '<a href="profile.php?action=truncate"  class="but">Truncar</a>'; ?>
+
+	<br><br>
+
     <?php echo '<a href="profile.php?action=preguntas"  class="but">Editar Preguntas Especificas</a>'; ?>
 
     <br><br>
