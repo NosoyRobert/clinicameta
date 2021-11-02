@@ -22,17 +22,17 @@ if($resultado)
         $cedula = $row['cedula'];
     }
 
-        $datos=mysqli_query($con, "SELECT cedula, grupo, cargo FROM evaluado WHERE cedula='$cedula'");
+        $datos=mysqli_query($con, "SELECT id_A, cedula, grupo, cargo FROM evaluado WHERE cedula='$cedula'");
         $row = mysqli_fetch_assoc($datos);
         $grupo = $row['grupo'];
         $cargoP = $row['cargo'];
-        $cargo = $row['cargo'];
+        $id_A = $row['id_A'];
 
         $PRE=mysqli_query($con, "SELECT 
-        grupo, cargo,
+        grupo, cargo, id_pre,
         PP1, PP2, PP3, PP4, PP5
         FROM preguntas
-        WHERE cargo='$cargoP'");
+        WHERE cargo='$id_A'");
         $row = mysqli_fetch_assoc($PRE);
 
         //var_dump($datos);
