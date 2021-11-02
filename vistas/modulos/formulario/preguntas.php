@@ -26,13 +26,13 @@ if($resultado)
         $row = mysqli_fetch_assoc($datos);
         $grupo = $row['grupo'];
         $cargoP = $row['cargo'];
-        $cargo = $row['cargo'];
+        $cargoA = $row['cargo'];
 
         $PRE=mysqli_query($con, "SELECT 
         grupo, cargo,
         PP1, PP2, PP3, PP4, PP5
         FROM preguntas
-        WHERE cargo='$cargoP'");
+        WHERE cargo='$cargoA'");
         $row = mysqli_fetch_assoc($PRE);
         $PP1=isset($row['PP1']) ? $row['PP1'] : '';
         $PP2=isset($row['PP2']) ? $row['PP2'] : '';
