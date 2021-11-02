@@ -9,8 +9,8 @@ require_once('tablap.php');
 $css = file_get_contents('sty_tabla.css');
 
 //base de datos
-//require_once('../config/db.php');
-//require_once('../config/conexion.php');
+require_once('../config/db.php');
+require_once('../config/conexion.php');
 require_once('basedatos.php');
 
 $mpdf = new \Mpdf\Mpdf

@@ -38,6 +38,3 @@ if($resultado)
 <?php	        
 } 
 ?>
-
-
-

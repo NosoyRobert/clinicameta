@@ -28,8 +28,8 @@ if(isset($_POST["enviar"]))
 		while($datos = fgetcsv($fp, 1000, ";"))
 		{
 			$rows ++;
-			//echo $datos[0]. " ".$datos[1]. " ".$datos[2]. " ".$datos[3]. " ".$datos[4]. " ".$datos[5]."<br>";
-			if($rows > 1)
+			//echo $datos[0]. " ".$datos[1]. " ".$datos[2]. " ".$datos[3]. " ".$datos[4]."<br>";
+			if($rows >= 1)
 			{
 				$resultado = insertar_datos($datos[0],$datos[1],$datos[2],$datos[3],$datos[4]);
 				if ($resultado) 

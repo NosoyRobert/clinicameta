@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluación de Desempeño</title>
+    <meta charset="utf-8">
+    
     <style>
         
-
-        *{
+*{
 	padding:0;
 	margin:0;
 	font-family: : century gothic;
@@ -12,6 +17,7 @@ body{
 padding:0;
 margin:0;
 width:100%; 
+
 background: #00c6ff;  /* fallback for old browsers */
 background:  url("img/fd.jpg");  /* Chrome 10-25, Safari 5.1-6 */
 background:  url("img/fd.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -116,7 +122,7 @@ hr.hr {
 }
 
 h1.titulo{
-    font-family: 'Oswald', sans-serif;
+    font-family: "Lucida Console", Courier, monospace;
 	font-weight:200	;
 	text-transform:uppercase;
 	text-decoration:none;
@@ -124,9 +130,9 @@ h1.titulo{
 	letter-spacing:1px;
     display:inline-block;
     font-size: 50pt;
-    text-align: center;
-    
+    text-align: center; 
 }
+
 
 h4 {
     font-family: 'Oswald', sans-serif;
@@ -138,7 +144,6 @@ h4 {
     display:inline-block;
     font-size: 2em;
     text-align: center;
-    
 }
 
 p{
@@ -163,7 +168,7 @@ p.bren{
     margin-left: 100px;
     margin-right: 100px; 
     font-family: 'Oswald', sans-serif;
-	text-align: justify;
+	text-align: center;
     font-size: 20pt; 
 }
 
@@ -179,8 +184,6 @@ p.black{
     font-size: 20pt;
     color:#ffffff;
 }
-
-
 
 h3.sex{
     font-family: 'Oswald', sans-serif;
@@ -205,7 +208,6 @@ h3.pop{
     display:inline-block;
     font-size: 30pt;
     text-align: center;
-    
 }
 
 input {
@@ -214,6 +216,14 @@ input {
 	margin: auto;
 	margin-top:12px ;
 	font-size: 16px
+}
+
+input [type='text']{
+	width: calc(50% - 30px);
+	padding: 20px;
+	margin: justify;
+	margin-top:20px ;
+	font-size: 40px;
 }
 
 input [type='submit'] { 
@@ -226,7 +236,71 @@ input [type='submit'] {
 
 input[type='number']:focus {
 	border: 3px solid #555;
+}
+
+  	input.field {
+    box-sizing: border-box;
+    margin: justify;
+    width: 50%;
+    border: 3px solid currentColor;
+    padding: justify;
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+	margin-right: justify;
   }
+
+  ul.but {
+  padding: 0;
+  width: 100%;
+}
+
+li.but {
+  display: inline;
+}
+
+a.but {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: 19.5%;
+  margin-right: 0.625%;
+  text-align: center;
+  line-height: 3;
+  color: white;
+}
+a.but{
+	font-family: 'Oswald', sans-serif;
+	font-weight:500;
+	text-transform:uppercase;
+	text-decoration:none;
+	color: white;
+	margin:0 20px;
+	font-size:16px;
+	letter-spacing:1px;
+	position:relative;
+	display:inline-block;
+	}
+
+li:last-child a.but {
+  margin-right: 0;
+}
+
+a:link.but, a:visited.but, a:focus.but {
+background: #36D1DC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #5B86E5, #36D1DC); 
+}
+
+a:hover.but {
+  background: gray;
+}
+
+a:active.but {
+  background: black;
+  color: white;
+}
+
 
 
 . ok {
@@ -243,42 +317,27 @@ input[type='number']:focus {
 	background-color:  #a22 ;
 	color: #fff
 }
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+    </style>
+</head>
+<body>
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
+    <br><br>
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+	<?php echo '<a href="profile.php?action=asignar"  class="but">Asignar Evaluados</a>'; ?>
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    <br><br>
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+	<?php echo '<a href="profile.php?action=cambiar"  class="but">Cambiar Evaluadores</a>'; ?>
 
-.dropdown a:hover {background-color: #ddd;}
+    <br><br>
 
-.show {display: block;}
-</style>
+    <?php echo '<a href="profile.php?action=borrar"  class="but">Borrar intentos</a>'; ?>
+
+    <br><br>
+
+    <?php echo '<a href="profile.php?action=resultados"  class="but">Exportar Resultados</a>'; ?>
+
+	<br><br>
+
+</body>
+</html> 

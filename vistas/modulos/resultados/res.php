@@ -14,7 +14,7 @@ if(isset($_POST['calcular']))
             if($resul)
             {
                 ?>
-                <a href="PDF/mpdfres.php" class="but">Generar PDF</a>
+                <a href="PDF/mpdfres.php" target="_blank" class="but">Generar PDF</a>
                 <?php
             }
             else

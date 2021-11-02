@@ -1,6 +1,6 @@
 <?php
         //global $cedula;
-        $con = mysqli_connect('localhost', 'root', '', 'clinicameta');
+        $con = mysqli_connect('192.168.11.247', 'talentoh', 'talentoh', 'talentoh');
 
         function insertar_datos($id_B,$E1,$E2,$E3,$jefe)
         {
