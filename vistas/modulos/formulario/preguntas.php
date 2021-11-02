@@ -32,7 +32,7 @@ if($resultado)
         grupo, cargo,
         PP1, PP2, PP3, PP4, PP5
         FROM preguntas
-        WHERE cargo='$cargoA'");
+        WHERE cargo='$cargoP'");
         $row = mysqli_fetch_assoc($PRE);
         $PP1=isset($row['PP1']) ? $row['PP1'] : '';
         $PP2=isset($row['PP2']) ? $row['PP2'] : '';
