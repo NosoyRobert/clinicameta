@@ -81,46 +81,7 @@ if($resultado)
 
         //var_dump($datos);
         //var_dump($PRE);
-
-        /*if ($resultado = mysqli_query($con, $PRE)) 
-        {
-            while ($row = mysqli_fetch_assoc($resultado)) 
-            {
-                echo $row["$PRE"];
-            }
-        }*/
-
-        /*if(empty($PP1)){
-            echo "<h2> variable vacia o esta cero</h2>";
-        }
-        else{
-            echo "<h2>variable no esta vacia</h2>";
-        }*/
-            /*if($row['PP1']!=null)
-            {
-                $PP1 = $row['PP1'];
-            }
-
-            if(['PP2']!=null) 
-            {
-                $PP2 = $row['PP2'];
-            }
-
-            if(['PP3']!=null) 
-            {
-            $PP3 = $row['PP3'];
-            }
-
-            if(['PP4']!=null) 
-            {
-            $PP4 = $row['PP4'];
-            }
-
-            if(['PP5']!=null) 
-            {
-            $PP5 = $row['PP5'];     
-            }*/
-
+        
 ?>
             <?php
 }
