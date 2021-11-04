@@ -11,6 +11,7 @@ header("location: profile.php");
 
 <title>Inicio Sesion Clinica Meta</title>
 
+<link rel="shortcut icon" href="img/favicon.png">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
