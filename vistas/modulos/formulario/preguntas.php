@@ -72,7 +72,34 @@ if($resultado)
         PP1, PP2, PP3, PP4, PP5
         FROM preguntas
         WHERE cargo='$CAR1'");
+        //
+        $PRE2=mysqli_query($con, "SELECT 
+        grupo, cargo,
+        PP1, PP2, PP3, PP4, PP5
+        FROM preguntas
+        WHERE cargo='$CAR2'");
+        //
+        $PRE3=mysqli_query($con, "SELECT 
+        grupo, cargo,
+        PP1, PP2, PP3, PP4, PP5
+        FROM preguntas
+        WHERE cargo='$CAR3'");
+        //
+        $PRE4=mysqli_query($con, "SELECT 
+        grupo, cargo,
+        PP1, PP2, PP3, PP4, PP5
+        FROM preguntas
+        WHERE cargo='$CAR4'");
+        //
         $row = mysqli_fetch_assoc($PRE);
+            $row2 = mysqli_fetch_assoc($PRE2);
+                $row3 = mysqli_fetch_assoc($PRE3);
+                    $row4 = mysqli_fetch_assoc($PRE4);
+
+                    var_dump($row);?><br><br><?php
+                    var_dump($row2);?><br><br><?php
+                    var_dump($row3);?><br><br><?php
+                    var_dump($row4);?><br><br><?php
         $PP1=isset($row['PP1']) ? $row['PP1'] : '';
         $PP2=isset($row['PP2']) ? $row['PP2'] : '';
         $PP3=isset($row['PP3']) ? $row['PP3'] : '';
