@@ -96,41 +96,45 @@ if($resultado)
                 $row3 = mysqli_fetch_assoc($PRE3);
                     $row4 = mysqli_fetch_assoc($PRE4);
 
-                    /*var_dump($row);?><br><br><?php
+                    /*var_dump($row2);?><br><br><?php
                     var_dump($row2);?><br><br><?php
                     var_dump($row3);?><br><br><?php
                     var_dump($row4);?><br><br><?php*/
 
-                if ($row!=$PRE) {
-                        $PP1=isset($row['PP1']) ? $row['PP1'] : '';
-                        $PP2=isset($row['PP2']) ? $row['PP2'] : '';
-                        $PP3=isset($row['PP3']) ? $row['PP3'] : '';
-                        $PP4=isset($row['PP4']) ? $row['PP4'] : '';
-                        $PP5=isset($row['PP5']) ? $row['PP5'] : '';
+        if($row==$row)
+        {
+            $PP1=isset($row['PP1']) ? $row['PP1'] : '';
+            $PP2=isset($row['PP2']) ? $row['PP2'] : '';
+            $PP3=isset($row['PP3']) ? $row['PP3'] : '';
+            $PP4=isset($row['PP4']) ? $row['PP4'] : '';
+            $PP5=isset($row['PP5']) ? $row['PP5'] : '';
+        }
+            else if ($row2==$row2) 
+            {                
+                $PP1=isset($row2['PP1']) ? $row2['PP1'] : '';
+                $PP2=isset($row2['PP2']) ? $row2['PP2'] : '';
+                $PP3=isset($row2['PP3']) ? $row2['PP3'] : '';
+                $PP4=isset($row2['PP4']) ? $row2['PP4'] : '';
+                $PP5=isset($row2['PP5']) ? $row2['PP5'] : '';    
+            }
+                elseif ($row3==$row3) 
+                {
+                    $PP1=isset($row3['PP1']) ? $row3['PP1'] : '';
+                    $PP2=isset($row3['PP2']) ? $row3['PP2'] : '';
+                    $PP3=isset($row3['PP3']) ? $row3['PP3'] : '';
+                    $PP4=isset($row3['PP4']) ? $row3['PP4'] : '';
+                    $PP5=isset($row3['PP5']) ? $row3['PP5'] : '';
+                }
+                    else if ($row4==$row4) 
+                    {                            
+                        $PP1=isset($row4['PP1']) ? $row4['PP1'] : '';
+                        $PP2=isset($row4['PP2']) ? $row4['PP2'] : '';
+                        $PP3=isset($row4['PP3']) ? $row4['PP3'] : '';
+                        $PP4=isset($row4['PP4']) ? $row4['PP4'] : '';
+                        $PP5=isset($row4['PP5']) ? $row4['PP5'] : '';
                     }
-                        else if($row2!=$PRE2)
-                        {
-                            $PP1=isset($row['PP1']) ? $row['PP1'] : '';
-                            $PP2=isset($row['PP2']) ? $row['PP2'] : '';
-                            $PP3=isset($row['PP3']) ? $row['PP3'] : '';
-                            $PP4=isset($row['PP4']) ? $row['PP4'] : '';
-                            $PP5=isset($row['PP5']) ? $row['PP5'] : '';                            
-                        }
-                            elseif ($row3!=$PRE3) 
-                            {
-                                $PP1=isset($row['PP1']) ? $row['PP1'] : '';
-                                $PP2=isset($row['PP2']) ? $row['PP2'] : '';
-                                $PP3=isset($row['PP3']) ? $row['PP3'] : '';
-                                $PP4=isset($row['PP4']) ? $row['PP4'] : '';
-                                $PP5=isset($row['PP5']) ? $row['PP5'] : '';                  
-                            }
-                                elseif ($row4!=$PRE4) {
-                                    $PP1=isset($row['PP1']) ? $row['PP1'] : '';
-                                    $PP2=isset($row['PP2']) ? $row['PP2'] : '';
-                                    $PP3=isset($row['PP3']) ? $row['PP3'] : '';
-                                    $PP4=isset($row['PP4']) ? $row['PP4'] : '';
-                                    $PP5=isset($row['PP5']) ? $row['PP5'] : '';                  
-                                }
+
+                
 
         //var_dump($datos);
         //var_dump($PRE);
